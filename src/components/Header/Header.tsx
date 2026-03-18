@@ -38,12 +38,12 @@ const Header: React.FC<HeaderProps> = ({
   ];
 
   const trainingItems = [
-    { title: "Live Project Internship", description: "30–90 day programs with real client project exposure.", icon: "💻", href: "/training" },
-    { title: "Tech Bootcamp", description: "Practical coding for school and college students.", icon: "🚀", href: "/training" },
-    { title: "Web Development", description: "Frontend & backend training with React, Node.js & more.", icon: "🌐", href: "/training" },
-    { title: "ERP & Automation", description: "Build enterprise systems from scratch with senior mentors.", icon: "⚙️", href: "/training" },
-    { title: "Performance Certification", description: "Earn verified credentials based on your project outcomes.", icon: "📜", href: "/training" },
-    { title: "Apply for Internship", description: "Limited seats — apply today to secure your spot.", icon: "✅", href: "/contact" },
+    { title: "Live Project Internship", description: "30–90 day programs with real client project exposure.", icon: "💻", href: "/training_enrollment" },
+    { title: "Tech Bootcamp", description: "Practical coding for school and college students.", icon: "🚀", href: "/training_enrollment" },
+    { title: "Web Development", description: "Frontend & backend training with React, Node.js & more.", icon: "🌐", href: "/training_enrollment" },
+    { title: "ERP & Automation", description: "Build enterprise systems from scratch with senior mentors.", icon: "⚙️", href: "/training_enrollment" },
+    { title: "Performance Certification", description: "Earn verified credentials based on your project outcomes.", icon: "📜", href: "/training_enrollment" },
+    { title: "Enroll in Programs", description: "Limited seats — apply today to secure your spot.", icon: "✅", href: "/training_enrollment" },
   ];
 
   return (

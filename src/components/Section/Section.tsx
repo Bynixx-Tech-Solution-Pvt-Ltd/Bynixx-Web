@@ -6,16 +6,18 @@ interface SectionProps {
     subtitle?: string;
     children: React.ReactNode;
     dark?: boolean;
+    id?: string;
 }
 
 const Section: React.FC<SectionProps> = ({
     title,
     subtitle,
     children,
-    dark = false
+    dark = false,
+    id
 }) => {
     return (
-        <section className={`${styles.section} ${dark ? styles.dark : ''}`}>
+        <section id={id} className={`${styles.section} ${dark ? styles.dark : ''}`}>
             <div className="container">
                 {(title || subtitle) && (
                     <div className={styles.header}>
