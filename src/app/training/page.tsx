@@ -2,92 +2,178 @@ import Hero from "@/components/Hero/Hero";
 import Section from "@/components/Section/Section";
 import CourseCard from "@/components/Cards/CourseCard";
 import styles from "../page.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Training & Internships – BYNIXX Tech Solutions",
+  description:
+    "Live-project internships (30–90 days) and tech bootcamps for school and college students. Gain real industry experience — not just classroom theory.",
+};
 
 export default function Training() {
-    const allCourses = [
-        {
-            title: "Frontend Mastery",
-            duration: "10 Weeks",
-            level: "Beginner",
-            price: "$800",
-            href: "/training/frontend"
-        },
-        {
-            title: "Backend Engineering",
-            duration: "12 Weeks",
-            level: "Intermediate",
-            price: "$950",
-            href: "/training/backend"
-        },
-        {
-            title: "Data Science & AI",
-            duration: "14 Weeks",
-            level: "Advanced",
-            price: "$1200",
-            href: "/training/data"
-        },
-        {
-            title: "Cloud Engineering (AWS)",
-            duration: "8 Weeks",
-            level: "Intermediate",
-            price: "$900",
-            href: "/training/cloud"
-        },
-        {
-            title: "UI/UX Design Systems",
-            duration: "6 Weeks",
-            level: "Beginner",
-            price: "$600",
-            href: "/training/design"
-        },
-        {
-            title: "Cybersecurity Bootcamp",
-            duration: "12 Weeks",
-            level: "Advanced",
-            price: "$1100",
-            href: "/training/cyber"
-        }
-    ];
+  const programs = [
+    {
+      title: "Live Project Internship",
+      duration: "30–90 Days",
+      level: "All Levels",
+      price: "Affordable",
+      href: "/contact",
+    },
+    {
+      title: "Tech Bootcamp",
+      duration: "Flexible Schedule",
+      level: "Beginner",
+      price: "Affordable",
+      href: "/contact",
+    },
+  ];
 
-    return (
-        <>
-            <Hero
-                title="Master the Skills of Tomorrow."
-                subtitle="Up-skill your team or start your journey in tech with our industry-driven curriculum."
-                primaryAction={{ label: "View Catalog", href: "#catalog" }}
-            />
+  const internshipFeatures = [
+    {
+      icon: "💻",
+      title: "Real Client Projects",
+      desc: "Work on live projects for actual BYNIXX clients — not simulated assignments or toy projects.",
+    },
+    {
+      icon: "🏢",
+      title: "Industry-Level Practices",
+      desc: "Learn code reviews, version control, agile sprints, and deployment pipelines used in real companies.",
+    },
+    {
+      icon: "📜",
+      title: "Performance-Based Certification",
+      desc: "Earn a certificate that reflects your actual contribution — verified by client project outcomes.",
+    },
+    {
+      icon: "👨‍💼",
+      title: "Mentorship by Practitioners",
+      desc: "Guided by professionals who build and deliver real software daily — not just lecturers.",
+    },
+    {
+      icon: "🚀",
+      title: "Career-Oriented Learning",
+      desc: "Build a portfolio of real work. Walk out with projects you can confidently present to employers.",
+    },
+    {
+      icon: "🔗",
+      title: "Industry Network Access",
+      desc: "Get connected to BYNIXX's growing client and partner network for placement and freelance opportunities.",
+    },
+  ];
 
-            <Section
-                title="Training Catalog"
-                subtitle="Choose from a variety of paths designed to make you industry-ready."
-            >
-                <div id="catalog" className={styles.grid}>
-                    {allCourses.map((course, index) => (
-                        <CourseCard key={index} {...course} />
-                    ))}
-                </div>
-            </Section>
+  const bootcampTopics = [
+    { name: "Web Development Fundamentals", icon: "🌐" },
+    { name: "Frontend with React & Next.js", icon: "⚛️" },
+    { name: "Backend with Node.js & APIs", icon: "🔧" },
+    { name: "Database Design (SQL & NoSQL)", icon: "🗄️" },
+    { name: "Version Control with Git", icon: "📂" },
+    { name: "Project Deployment & DevOps Basics", icon: "🚀" },
+  ];
 
-            <Section
-                title="Learning Experience"
-                subtitle="We focus on project-based learning to ensure practical mastery."
-                dark
-            >
-                <div className={styles.grid}>
-                    <div className="glass" style={{ padding: '2rem', borderRadius: '20px' }}>
-                        <h3>Practical Projects</h3>
-                        <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>Work on real-world projects that you can showcase to employers.</p>
-                    </div>
-                    <div className="glass" style={{ padding: '2rem', borderRadius: '20px' }}>
-                        <h3>Expert Mentors</h3>
-                        <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>Learn directly from senior engineers working at top tech firms.</p>
-                    </div>
-                    <div className="glass" style={{ padding: '2rem', borderRadius: '20px' }}>
-                        <h3>Job Placement</h3>
-                        <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>Get career guidance and access to our network of hiring partners.</p>
-                    </div>
-                </div>
-            </Section>
-        </>
-    );
+  const whoShouldJoin = [
+    {
+      title: "Final Year Engineering Students",
+      desc: "Complete your mandatory industrial training while building a real-world portfolio.",
+    },
+    {
+      title: "Freshers & Recent Graduates",
+      desc: "Bridge the gap between your degree and your first developer job.",
+    },
+    {
+      title: "School Students (Bootcamp)",
+      desc: "Get a head start on coding with our school-friendly tech bootcamps.",
+    },
+    {
+      title: "Career Switchers",
+      desc: "Transition into tech with practical, project-driven learning — no prior CS degree required.",
+    },
+  ];
+
+  return (
+    <>
+      <Hero
+        title="Learn by Doing. Build What's Real."
+        subtitle="BYNIXX's training programs give you hands-on live-project experience — because the fastest way to become a great developer is to work on real problems, for real clients."
+        primaryAction={{ label: "Apply for Internship", href: "/contact" }}
+        secondaryAction={{ label: "View Programs", href: "#programs" }}
+      />
+
+      <Section
+        title="Our Training Programs"
+        subtitle="From live internships to focused bootcamps — designed to make you industry-ready."
+      >
+        <div id="programs" className={styles.grid}>
+          {programs.map((program, index) => (
+            <CourseCard key={index} {...program} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        title="Live Project Internship"
+        subtitle="30 to 90 days of real work experience — the edge that separates you from other candidates."
+        dark
+      >
+        <div className={styles.grid}>
+          {internshipFeatures.map((f, i) => (
+            <div key={i} className="glass" style={{ padding: "2rem", borderRadius: "20px" }}>
+              <span style={{ fontSize: "2rem" }}>{f.icon}</span>
+              <h3 style={{ marginTop: "1rem", marginBottom: "0.8rem" }}>{f.title}</h3>
+              <p style={{ color: "var(--text-secondary)", lineHeight: "1.7" }}>{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        title="Tech Bootcamp Topics"
+        subtitle="Practical, career-oriented coding skills for school and college students."
+      >
+        <div className={styles.topicsGrid}>
+          {bootcampTopics.map((topic, i) => (
+            <div key={i} className={`glass ${styles.topicChip}`}>
+              <span>{topic.icon}</span>
+              <span>{topic.name}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        title="Who Should Join?"
+        subtitle="BYNIXX training programs are built for anyone ready to go beyond textbooks."
+        dark
+      >
+        <div className={styles.grid}>
+          {whoShouldJoin.map((item, i) => (
+            <div key={i} className="glass" style={{ padding: "2rem", borderRadius: "20px" }}>
+              <h4 style={{ marginBottom: "0.8rem", color: "var(--primary)" }}>{item.title}</h4>
+              <p style={{ color: "var(--text-secondary)", lineHeight: "1.7" }}>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        title="Ready to Launch Your Tech Career?"
+        subtitle="Apply today and start working on real projects with real clients."
+      >
+        <div className={styles.ctaBox + " glass"}>
+          <h3>Limited Seats per Cohort</h3>
+          <p>
+            We keep batches small to ensure every intern gets personalized mentorship and meaningful project work.
+            Apply early to secure your spot.
+          </p>
+          <div className={styles.ctaActions}>
+            <a href="/contact" className="btn-primary">
+              Apply Now
+            </a>
+            <a href="/about" className={styles.btnOutline}>
+              Learn About Us
+            </a>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
 }

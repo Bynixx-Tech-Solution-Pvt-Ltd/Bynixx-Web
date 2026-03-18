@@ -17,7 +17,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({
-  logo = "Bynixx",
+  logo = "BYNIXX",
   links = [
     { label: "Home", href: "/" },
     { label: "Solutions", href: "/solutions", hasMegaMenu: true },
@@ -29,21 +29,21 @@ const Header: React.FC<HeaderProps> = ({
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   const solutionsItems = [
-    { title: "Web Development", description: "Modern, high-performance web apps.", icon: "🌐", href: "/solutions/web" },
-    { title: "Cloud Architecture", description: "Scalable cloud infrastructure.", icon: "☁️", href: "/solutions/cloud" },
-    { title: "AI & Automation", description: "Smart solutions for business.", icon: "🤖", href: "/solutions/ai" },
-    { title: "Cybersecurity", description: "Comprehensive digital protection.", icon: "🛡️", href: "/solutions/security" },
-    { title: "Managed IT", description: "Focus on business while we handle IT.", icon: "⚙️", href: "/solutions/managed" },
-    { title: "Data Analytics", description: "Transform data into insights.", icon: "📊", href: "/solutions/data" },
+    { title: "Website Development", description: "Mobile-responsive, SEO-ready business websites for SMEs.", icon: "🌐", href: "/solutions" },
+    { title: "Custom ERP Systems", description: "Inventory, billing & workflow automation built for your business.", icon: "📦", href: "/solutions" },
+    { title: "Workflow Automation", description: "Digitize manual processes and boost operational efficiency.", icon: "🤖", href: "/solutions" },
+    { title: "IT Consulting", description: "Digital transformation roadmaps and infrastructure planning.", icon: "🧩", href: "/solutions" },
+    { title: "AMC Services", description: "Ongoing maintenance, updates & 24/7 technical support.", icon: "🔧", href: "/solutions" },
+    { title: "Free Digital Audit", description: "Let us analyze your business and recommend the ideal tech stack.", icon: "🎯", href: "/contact" },
   ];
 
   const trainingItems = [
-    { title: "Frontend Mastery", description: "Learn React, Next.js, and CSS.", icon: "🎨", href: "/training/frontend" },
-    { title: "Backend Engineering", description: "Build scalable APIs and servers.", icon: "🔧", href: "/training/backend" },
-    { title: "Data Science", description: "Master Python and ML models.", icon: "🧬", href: "/training/datascience" },
-    { title: "Cloud Engineering", description: "AWS/Azure certification prep.", icon: "🏗️", href: "/training/cloud" },
-    { title: "DevOps Bootcamp", description: "Automation and CI/CD pipelines.", icon: "🚀", href: "/training/devops" },
-    { title: "UX/UI Design", description: "Design beautiful user experiences.", icon: "✨", href: "/training/design" },
+    { title: "Live Project Internship", description: "30–90 day programs with real client project exposure.", icon: "💻", href: "/training" },
+    { title: "Tech Bootcamp", description: "Practical coding for school and college students.", icon: "🚀", href: "/training" },
+    { title: "Web Development", description: "Frontend & backend training with React, Node.js & more.", icon: "🌐", href: "/training" },
+    { title: "ERP & Automation", description: "Build enterprise systems from scratch with senior mentors.", icon: "⚙️", href: "/training" },
+    { title: "Performance Certification", description: "Earn verified credentials based on your project outcomes.", icon: "📜", href: "/training" },
+    { title: "Apply for Internship", description: "Limited seats — apply today to secure your spot.", icon: "✅", href: "/contact" },
   ];
 
   return (
@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({
 
         <div className={styles.actions}>
           <Link href="/contact" className="btn-primary">
-            Get Started
+            Get Free Audit
           </Link>
         </div>
       </div>

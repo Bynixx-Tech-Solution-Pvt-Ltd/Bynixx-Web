@@ -11,43 +11,57 @@ const Footer: React.FC = () => {
                 <div className={styles.grid}>
                     <div className={styles.brand}>
                         <Link href="/" className={styles.logo}>
-                            Bynixx<span className="text-gradient">.</span>
+                            BYNIXX<span className="text-gradient">.</span>
                         </Link>
                         <p className={styles.description}>
-                            Empowering businesses through cutting-edge tech solutions and future-ready training programs.
+                            Empowering small and medium businesses with enterprise-grade digital solutions
+                            and training the next generation of developers through live-project execution.
                         </p>
+                        <div className={styles.tagline}>
+                            🏡 Proudly based in Theni, Tamil Nadu
+                        </div>
                     </div>
 
                     <div className={styles.column}>
                         <h4>Solutions</h4>
                         <ul>
-                            <li><Link href="/solutions/web">Web Development</Link></li>
-                            <li><Link href="/solutions/cloud">Cloud Architecture</Link></li>
-                            <li><Link href="/solutions/ai">AI Integration</Link></li>
+                            <li><Link href="/solutions">Website Development</Link></li>
+                            <li><Link href="/solutions">Custom ERP Systems</Link></li>
+                            <li><Link href="/solutions">Workflow Automation</Link></li>
+                            <li><Link href="/solutions">IT Consulting</Link></li>
+                            <li><Link href="/solutions">AMC Services</Link></li>
                         </ul>
                     </div>
 
                     <div className={styles.column}>
                         <h4>Training</h4>
                         <ul>
-                            <li><Link href="/training/frontend">Frontend Mastery</Link></li>
-                            <li><Link href="/training/backend">Backend Engineering</Link></li>
-                            <li><Link href="/training/devops">DevOps Cycle</Link></li>
+                            <li><Link href="/training">Live Project Internship</Link></li>
+                            <li><Link href="/training">Tech Bootcamp</Link></li>
+                            <li><Link href="/training">Apply Now</Link></li>
                         </ul>
                     </div>
 
                     <div className={styles.column}>
                         <h4>Contact</h4>
-                        <p>hello@bynixx.com</p>
-                        <p>+1 234 567 890</p>
+                        <p className={styles.contactItem}>
+                            📍 Sri Bharathi Nagar, Theni,<br />
+                            Tamil Nadu – 625532
+                        </p>
+                        <p className={styles.contactItem}>
+                            <a href="tel:+917530008380">📞 +91 75300 08380</a>
+                        </p>
+                        <p className={styles.contactItem}>
+                            <a href="/contact">✉️ Get in Touch</a>
+                        </p>
                     </div>
                 </div>
 
                 <div className={styles.bottom}>
-                    <p>&copy; {currentYear} Bynixx Tech Solutions. All rights reserved.</p>
+                    <p>&copy; {currentYear} BYNIXX Tech Solutions Pvt. Ltd. All rights reserved.</p>
                     <div className={styles.legal}>
-                        <Link href="/privacy">Privacy Policy</Link>
-                        <Link href="/terms">Terms of Service</Link>
+                        <Link href="/about">About Us</Link>
+                        <Link href="/contact">Contact</Link>
                     </div>
                 </div>
             </div>

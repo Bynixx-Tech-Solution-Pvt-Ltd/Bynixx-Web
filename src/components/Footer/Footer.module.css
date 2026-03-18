@@ -28,6 +28,29 @@
 .description {
     font-size: 0.95rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.contactItem {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 0.4rem;
+}
+
+.contactItem a {
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.contactItem a:hover {
+    color: var(--primary);
 }
 
 .column h4 {
