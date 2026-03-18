@@ -58,8 +58,8 @@ export default function Solutions() {
 
   const industries = [
     { name: "Textile Manufacturing", icon: "🧵", desc: "Inventory, order management & production tracking systems." },
-    { name: "Food Processing", icon: "🥦", desc: "Quality control, supply chain, and compliance management tools." },
-    { name: "Industrial Machinery", icon: "🏭", desc: "Maintenance scheduling, parts inventory & client portals." },
+    { name: "Food Processing", icon: "🍎", desc: "Quality control, supply chain, and compliance management tools." },
+    { name: "Industrial Machinery", icon: "⚙️", desc: "Maintenance scheduling, parts inventory & client portals." },
     { name: "Agriculture & Agro Business", icon: "🌾", desc: "Yield tracking, market pricing, and farmer coordination platforms." },
     { name: "Retail & SMEs", icon: "🛒", desc: "POS integration, e-commerce, and loyalty programs for local businesses." },
   ];
@@ -121,7 +121,7 @@ export default function Solutions() {
             </p>
           </div>
           <div className="glass" style={{ padding: "2rem", borderRadius: "20px" }}>
-            <span style={{ fontSize: "2rem" }}>🔄</span>
+            <span style={{ fontSize: "2rem" }}>🏗️</span>
             <h3 style={{ marginTop: "1rem" }}>Built Around Your Process</h3>
             <p style={{ color: "var(--text-secondary)", marginTop: "1rem", lineHeight: "1.7" }}>
               Your workflows, your terminology, your logic — we build software that fits how YOU work, not the other way around.

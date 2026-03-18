@@ -17,14 +17,14 @@ export default function Training() {
       duration: "30–90 Days",
       level: "All Levels",
       price: "Affordable",
-      href: "/contact",
+      href: "/training_enrollment",
     },
     {
       title: "Tech Bootcamp",
       duration: "Flexible Schedule",
       level: "Beginner",
       price: "Affordable",
-      href: "/contact",
+      href: "/training_enrollment",
     },
   ];
 
@@ -94,15 +94,16 @@ export default function Training() {
       <Hero
         title="Learn by Doing. Build What's Real."
         subtitle="BYNIXX's training programs give you hands-on live-project experience — because the fastest way to become a great developer is to work on real problems, for real clients."
-        primaryAction={{ label: "Apply for Internship", href: "/contact" }}
+        primaryAction={{ label: "Enroll Now", href: "/training_enrollment" }}
         secondaryAction={{ label: "View Programs", href: "#programs" }}
       />
 
       <Section
+        id="programs"
         title="Our Training Programs"
         subtitle="From live internships to focused bootcamps — designed to make you industry-ready."
       >
-        <div id="programs" className={styles.grid}>
+        <div className={styles.grid}>
           {programs.map((program, index) => (
             <CourseCard key={index} {...program} />
           ))}
@@ -165,8 +166,8 @@ export default function Training() {
             Apply early to secure your spot.
           </p>
           <div className={styles.ctaActions}>
-            <a href="/contact" className="btn-primary">
-              Apply Now
+            <a href="/training_enrollment" className="btn-primary">
+              Enroll Now
             </a>
             <a href="/about" className={styles.btnOutline}>
               Learn About Us
