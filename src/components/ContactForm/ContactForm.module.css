@@ -1,0 +1,58 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.group input,
+.group select,
+.group textarea {
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 8px;
+    color: var(--foreground);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.group input:focus,
+.group select:focus,
+.group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--surface-hover);
+}
+
+.success {
+    text-align: center;
+    padding: 3rem;
+    background: var(--surface);
+    border-radius: 20px;
+    border: 1px solid var(--primary-glow);
+}
+
+.success h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.success p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
