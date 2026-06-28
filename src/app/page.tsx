@@ -1,7 +1,7 @@
-import Hero from "@/components/Hero/Hero";
-import Section from "@/components/Section/Section";
-import ServiceCard from "@/components/Cards/ServiceCard";
-import CourseCard from "@/components/Cards/CourseCard";
+import Hero from "@/components/ui/hero/Hero";
+import Section from "@/components/ui/section/Section";
+import ServiceCard from "@/components/ui/card/ServiceCard";
+import CourseCard from "@/components/ui/card/CourseCard";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -201,7 +201,7 @@ export default function Home() {
         <div className={styles.testimonialsGrid}>
           {testimonials.map((t, i) => (
             <div key={i} className={`glass ${styles.testimonialCard}`}>
-              <p className={styles.quote}>"{t.quote}"</p>
+              <p className={styles.quote}>&ldquo;{t.quote}&rdquo;</p>
               <div className={styles.testimonialAuthor}>
                 <strong>{t.author}</strong>
                 <span>{t.role}</span>

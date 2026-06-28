@@ -1,0 +1,219 @@
+/* =============================================
+   About Page — Clean, Modern Layout
+   ============================================= */
+
+/* Story Section — Two Column */
+.storyGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.storyContent h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.storyContent p {
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+}
+
+.storyContent p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mission / Vision Card */
+.missionCard {
+    padding: 2.8rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.missionBlock {
+    padding-left: 1.4rem;
+    border-left: 3px solid var(--primary);
+}
+
+.missionBlock:nth-child(2) {
+    border-color: var(--secondary);
+}
+
+.missionBlock strong {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.missionBlock p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Values Grid */
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.valueCard {
+    padding: 2.2rem;
+    border-radius: 16px;
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.valueCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 82, 204, 0.08);
+}
+
+.valueIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--primary-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+.valueIcon svg {
+    width: 22px;
+    height: 22px;
+    color: var(--primary);
+}
+
+.valueCard h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+.valueCard p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+/* Process / How We Work */
+.processTimeline {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.processTimeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 23px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    opacity: 0.2;
+}
+
+.processItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.8rem;
+    padding: 1.4rem 0;
+    position: relative;
+}
+
+.processNumber {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--background);
+    border: 2px solid var(--surface-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--primary);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition-base);
+}
+
+.processItem:hover .processNumber {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.processBody h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.processBody p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaCard {
+    padding: 3.5rem 4rem;
+    border-radius: 24px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ctaCard h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.ctaCard p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .storyGrid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .valuesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .valuesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .ctaCard {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .ctaCard h3 {
+        font-size: 1.6rem;
+    }
+}

@@ -1,6 +1,6 @@
-import Hero from "@/components/Hero/Hero";
-import Section from "@/components/Section/Section";
-import styles from "../page.module.css";
+import Hero from "@/components/ui/hero/Hero";
+import Section from "@/components/ui/section/Section";
+import styles from "./about.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,34 +12,28 @@ export const metadata: Metadata = {
 export default function About() {
   const values = [
     {
-      icon: "🤝",
       title: "Hybrid Model",
-      desc: "We combine software service delivery with live-project training — creating industry-ready professionals while solving real business problems.",
+      desc: "We combine software delivery with live-project training — creating industry-ready professionals while solving real business problems.",
     },
     {
-      icon: "📍",
       title: "Local Expertise",
       desc: "Deep-rooted in Tier-2 markets like Theni, Tamil Nadu, we understand the unique needs of regional SMEs better than anyone.",
     },
     {
-      icon: "💰",
-      title: "ROI-Driven Solutions",
-      desc: "Every solution we build is designed to deliver measurable returns — faster operations, reduced costs, and better digital presence.",
+      title: "ROI-Driven",
+      desc: "Every solution we build delivers measurable returns — faster operations, reduced costs, and stronger digital presence.",
     },
     {
-      icon: "⚡",
-      title: "Faster Customization",
+      title: "Faster Delivery",
       desc: "We move fast without compromising quality. Agile processes and local teams mean quicker turnarounds for your business.",
     },
     {
-      icon: "🔍",
       title: "Transparent Process",
-      desc: "No hidden steps, no surprises. You're involved at every stage — from requirement gathering to final deployment.",
+      desc: "No hidden steps, no surprises. You&apos;re involved at every stage — from requirements to final deployment.",
     },
     {
-      icon: "🔧",
-      title: "Long-Term AMC Support",
-      desc: "Our relationship doesn't end at launch. We offer ongoing Annual Maintenance Contracts to keep your systems running smoothly.",
+      title: "Long-Term Support",
+      desc: "Our relationship doesn&apos;t end at launch. We offer ongoing Annual Maintenance Contracts to keep your systems running.",
     },
   ];
 
@@ -57,55 +51,43 @@ export default function About() {
     <>
       <Hero
         title="Who We Are"
-        subtitle="BYNIXX Tech Solutions is a hybrid digital transformation and live-project training company based in Theni, Tamil Nadu — bridging the gap between academic learning and industrial execution."
+        subtitle="A hybrid digital transformation and live-project training company based in Theni, Tamil Nadu — bridging the gap between academic learning and industrial execution."
       />
 
       <Section
         title="Our Story"
         subtitle="Born from a vision to empower Tier-2 India with enterprise-grade technology."
       >
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-          <div>
-            <h3 style={{ marginBottom: "1.5rem", fontSize: "1.8rem" }}>
-              A Local Company with a Big Mission
-            </h3>
-            <p style={{ color: "var(--text-secondary)", lineHeight: "1.9", marginBottom: "1.2rem" }}>
+        <div className={styles.storyGrid}>
+          <div className={styles.storyContent}>
+            <h3>A Local Company with a Big Mission</h3>
+            <p>
               BYNIXX Tech Solutions was founded to address a very real problem: small and medium
               enterprises in Theni and across Tamil Nadu were being left behind in the digital revolution.
               They needed technology solutions that were affordable, customizable, and supported locally — not
               generic software from distant vendors.
             </p>
-            <p style={{ color: "var(--text-secondary)", lineHeight: "1.9", marginBottom: "1.2rem" }}>
+            <p>
               At the same time, hundreds of engineering graduates were entering the workforce with strong
               theoretical knowledge but little real-world project exposure — making them under-prepared for
               industry roles.
             </p>
-            <p style={{ color: "var(--text-secondary)", lineHeight: "1.9" }}>
+            <p>
               BYNIXX was built to solve both problems simultaneously. Our hybrid model delivers enterprise
               technology solutions to businesses while training aspiring developers through the same live projects.
             </p>
           </div>
-          <div
-            className="glass"
-            style={{
-              padding: "3rem",
-              borderRadius: "30px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-            }}
-          >
-            <div style={{ textAlign: "center", fontSize: "3.5rem", marginBottom: "0.5rem" }}>🚀</div>
-            <div style={{ borderLeft: "3px solid var(--primary)", paddingLeft: "1.2rem" }}>
-              <strong style={{ color: "var(--text-primary)" }}>Our Mission</strong>
-              <p style={{ color: "var(--text-secondary)", marginTop: "0.5rem", lineHeight: "1.7" }}>
+          <div className={`${styles.missionCard} glass`}>
+            <div className={styles.missionBlock}>
+              <strong>Our Mission</strong>
+              <p>
                 To bridge the gap between academic learning and industrial execution by delivering enterprise-grade
                 digital solutions while creating industry-ready professionals through real-world project experience.
               </p>
             </div>
-            <div style={{ borderLeft: "3px solid var(--secondary)", paddingLeft: "1.2rem" }}>
-              <strong style={{ color: "var(--text-primary)" }}>Our Vision</strong>
-              <p style={{ color: "var(--text-secondary)", marginTop: "0.5rem", lineHeight: "1.7" }}>
+            <div className={styles.missionBlock}>
+              <strong>Our Vision</strong>
+              <p>
                 To become the leading Tier-2 digital transformation and industry-integrated tech ecosystem
                 in Tamil Nadu — combining software development, training, and innovation into a scalable model.
               </p>
@@ -115,16 +97,20 @@ export default function About() {
       </Section>
 
       <Section
-        title="Why Choose BYNIXX?"
+        title="Why Choose BYNIXX"
         subtitle="Six reasons businesses and students across Tamil Nadu trust us."
         dark
       >
-        <div className={styles.grid}>
+        <div className={styles.valuesGrid}>
           {values.map((v, i) => (
-            <div key={i} className="glass" style={{ padding: "2.5rem", borderRadius: "20px" }}>
-              <span style={{ fontSize: "2rem" }}>{v.icon}</span>
-              <h3 style={{ marginTop: "1rem", marginBottom: "0.8rem" }}>{v.title}</h3>
-              <p style={{ color: "var(--text-secondary)", lineHeight: "1.7" }}>{v.desc}</p>
+            <div key={i} className={`${styles.valueCard} glass`}>
+              <div className={styles.valueIcon}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+              </div>
+              <h3>{v.title}</h3>
+              <p>{v.desc}</p>
             </div>
           ))}
         </div>
@@ -134,13 +120,13 @@ export default function About() {
         title="How We Work"
         subtitle="A structured, transparent process — from first conversation to long-term partnership."
       >
-        <div className={styles.processGrid}>
-          {howWeWork.map((step, i) => (
-            <div key={i} className={styles.processStep}>
-              <div className={styles.stepNumber}>{step.step}</div>
-              <div>
-                <h4 className={styles.stepTitle}>{step.title}</h4>
-                <p className={styles.stepDesc}>{step.desc}</p>
+        <div className={styles.processTimeline}>
+          {howWeWork.map((item, i) => (
+            <div key={i} className={styles.processItem}>
+              <div className={styles.processNumber}>{item.step}</div>
+              <div className={styles.processBody}>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
               </div>
             </div>
           ))}
@@ -149,17 +135,15 @@ export default function About() {
 
       <Section
         title="Ready to Partner with BYNIXX?"
-        subtitle="Let's talk about how we can digitally transform your business or kickstart your tech career."
+        subtitle="Let&apos;s talk about how we can digitally transform your business or kickstart your tech career."
         dark
       >
-        <div className={styles.ctaBox + " glass"}>
+        <div className={`${styles.ctaCard} glass`}>
           <h3>Talk to Our Team</h3>
           <p>Based in Theni, Tamil Nadu — locally present, enterprise-ready.</p>
-          <div className={styles.ctaActions}>
-            <a href="/contact" className="btn-primary">
-              Contact Us
-            </a>
-          </div>
+          <a href="/contact" className="btn-primary">
+            Contact Us
+          </a>
         </div>
       </Section>
     </>

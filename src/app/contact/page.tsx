@@ -1,7 +1,6 @@
-import Hero from "@/components/Hero/Hero";
-import Section from "@/components/Section/Section";
-import ContactForm from "@/components/ContactForm/ContactForm";
-import styles from "../page.module.css";
+import Hero from "@/components/ui/hero/Hero";
+import Section from "@/components/ui/section/Section";
+import ContactForm from "@/components/forms/contact-form/ContactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

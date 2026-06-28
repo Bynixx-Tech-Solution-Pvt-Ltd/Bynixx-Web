@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './EnrollmentForm.module.css';
 
 interface Program {
@@ -76,10 +76,7 @@ const EnrollmentForm: React.FC = () => {
   const filteredPrograms = programs.filter(p => !category || p.category === category);
   const selectedProgram = programs.find(p => p.id === selectedProgramId);
 
-  // Reset program selection when category changes
-  useEffect(() => {
-    setSelectedProgramId('');
-  }, [category]);
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -129,7 +126,10 @@ const EnrollmentForm: React.FC = () => {
           <select 
             id="category" 
             value={category} 
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => {
+              setCategory(e.target.value);
+              setSelectedProgramId('');
+            }}
             required
           >
             <option value="">Select a category</option>

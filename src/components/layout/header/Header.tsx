@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import styles from './Header.module.css';
 import Link from 'next/link';
 import MegaMenu from './MegaMenu';
+import Image from 'next/image';
+import logoImg from "@/assets/main_logo.png";
 
 interface NavLink {
   label: string;
@@ -20,9 +22,11 @@ const Header: React.FC<HeaderProps> = ({
   logo = "BYNIXX",
   links = [
     { label: "Home", href: "/" },
-    { label: "Solutions", href: "/solutions", hasMegaMenu: true },
-    { label: "Training", href: "/training", hasMegaMenu: true },
     { label: "About", href: "/about" },
+    // { label: "Solutions", href: "/solutions", hasMegaMenu: true },
+    // { label: "Training", href: "/training", hasMegaMenu: true },
+    { label: "Blog", href: "/blog" },
+    { label: "Announcements", href: "/announcements" },
     { label: "Contact", href: "/contact" },
   ]
 }) => {
@@ -38,12 +42,12 @@ const Header: React.FC<HeaderProps> = ({
   ];
 
   const trainingItems = [
-    { title: "Live Project Internship", description: "30–90 day programs with real client project exposure.", icon: "💻", href: "/training_enrollment" },
-    { title: "Tech Bootcamp", description: "Practical coding for school and college students.", icon: "🚀", href: "/training_enrollment" },
-    { title: "Web Development", description: "Frontend & backend training with React, Node.js & more.", icon: "🌐", href: "/training_enrollment" },
-    { title: "ERP & Automation", description: "Build enterprise systems from scratch with senior mentors.", icon: "⚙️", href: "/training_enrollment" },
-    { title: "Performance Certification", description: "Earn verified credentials based on your project outcomes.", icon: "📜", href: "/training_enrollment" },
-    { title: "Enroll in Programs", description: "Limited seats — apply today to secure your spot.", icon: "✅", href: "/training_enrollment" },
+    { title: "Live Project Internship", description: "30–90 day programs with real client project exposure.", icon: "💻", href: "/training-enrollment" },
+    { title: "Tech Bootcamp", description: "Practical coding for school and college students.", icon: "🚀", href: "/training-enrollment" },
+    { title: "Web Development", description: "Frontend & backend training with React, Node.js & more.", icon: "🌐", href: "/training-enrollment" },
+    { title: "ERP & Automation", description: "Build enterprise systems from scratch with senior mentors.", icon: "⚙️", href: "/training-enrollment" },
+    { title: "Performance Certification", description: "Earn verified credentials based on your project outcomes.", icon: "📜", href: "/training-enrollment" },
+    { title: "Enroll in Programs", description: "Limited seats — apply today to secure your spot.", icon: "✅", href: "/training-enrollment" },
   ];
 
   return (
@@ -52,8 +56,9 @@ const Header: React.FC<HeaderProps> = ({
       onMouseLeave={() => setActiveMenu(null)}
     >
       <div className={`container ${styles.nav}`}>
-        <Link href="/" className={styles.logo}>
-          {logo}<span className="text-gradient">.</span>
+        <Link href="/" className={styles.logo} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <Image src={logoImg} alt="BYNIXX Logo" width={32} height={32} style={{ objectFit: 'contain' }} />
+          <span>{logo}<span className="text-gradient">.</span></span>
         </Link>
 
         <nav className={styles.links}>

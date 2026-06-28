@@ -1,6 +1,6 @@
-import Hero from "@/components/Hero/Hero";
-import Section from "@/components/Section/Section";
-import ServiceCard from "@/components/Cards/ServiceCard";
+import Hero from "@/components/ui/hero/Hero";
+import Section from "@/components/ui/section/Section";
+import ServiceCard from "@/components/ui/card/ServiceCard";
 import styles from "../page.module.css";
 import type { Metadata } from "next";
 
@@ -110,7 +110,7 @@ export default function Solutions() {
             <span style={{ fontSize: "2rem" }}>📍</span>
             <h3 style={{ marginTop: "1rem" }}>Local On-Ground Support</h3>
             <p style={{ color: "var(--text-secondary)", marginTop: "1rem", lineHeight: "1.7" }}>
-              We're based in Theni, Tamil Nadu. When you need help, we're right there — not behind a ticket system.
+              We&apos;re based in Theni, Tamil Nadu. When you need help, we&apos;re right there — not behind a ticket system.
             </p>
           </div>
           <div className="glass" style={{ padding: "2rem", borderRadius: "20px" }}>

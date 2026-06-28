@@ -1,6 +1,6 @@
-import Hero from "@/components/Hero/Hero";
-import Section from "@/components/Section/Section";
-import CourseCard from "@/components/Cards/CourseCard";
+import Hero from "@/components/ui/hero/Hero";
+import Section from "@/components/ui/section/Section";
+import CourseCard from "@/components/ui/card/CourseCard";
 import styles from "../page.module.css";
 import type { Metadata } from "next";
 
@@ -17,14 +17,14 @@ export default function Training() {
       duration: "30–90 Days",
       level: "All Levels",
       price: "Affordable",
-      href: "/training_enrollment",
+      href: "/training-enrollment",
     },
     {
       title: "Tech Bootcamp",
       duration: "Flexible Schedule",
       level: "Beginner",
       price: "Affordable",
-      href: "/training_enrollment",
+      href: "/training-enrollment",
     },
   ];
 
@@ -94,7 +94,7 @@ export default function Training() {
       <Hero
         title="Learn by Doing. Build What's Real."
         subtitle="BYNIXX's training programs give you hands-on live-project experience — because the fastest way to become a great developer is to work on real problems, for real clients."
-        primaryAction={{ label: "Enroll Now", href: "/training_enrollment" }}
+        primaryAction={{ label: "Enroll Now", href: "/training-enrollment" }}
         secondaryAction={{ label: "View Programs", href: "#programs" }}
       />
 
@@ -166,7 +166,7 @@ export default function Training() {
             Apply early to secure your spot.
           </p>
           <div className={styles.ctaActions}>
-            <a href="/training_enrollment" className="btn-primary">
+            <a href="/training-enrollment" className="btn-primary">
               Enroll Now
             </a>
             <a href="/about" className={styles.btnOutline}>

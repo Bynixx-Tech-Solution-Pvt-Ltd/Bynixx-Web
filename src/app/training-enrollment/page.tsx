@@ -1,7 +1,7 @@
 import React from 'react';
-import Hero from "@/components/Hero/Hero";
-import Section from "@/components/Section/Section";
-import EnrollmentForm from "@/components/EnrollmentForm/EnrollmentForm";
+import Hero from "@/components/ui/hero/Hero";
+import Section from "@/components/ui/section/Section";
+import EnrollmentForm from "@/components/forms/enrollment-form/EnrollmentForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
