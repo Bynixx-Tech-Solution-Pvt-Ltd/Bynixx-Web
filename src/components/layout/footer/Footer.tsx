@@ -9,19 +9,28 @@ const Footer: React.FC = () => {
         <footer className={styles.footer}>
             <div className="container">
                 <div className={styles.grid}>
+                    {/* Brand */}
                     <div className={styles.brand}>
                         <Link href="/" className={styles.logo}>
                             BYNIXX<span className="text-gradient">.</span>
                         </Link>
                         <p className={styles.description}>
-                            Empowering small and medium businesses with enterprise-grade digital solutions
-                            and training the next generation of developers through live-project execution.
+                            Empowering small and medium businesses with enterprise-grade digital
+                            solutions, while training the next generation of tech professionals
+                            through live-project execution.
                         </p>
                         <div className={styles.tagline}>
                             🏡 Proudly based in Theni, Tamil Nadu
                         </div>
+                        <div className={styles.socials}>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} aria-label="LinkedIn">in</a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} aria-label="Twitter">𝕏</a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} aria-label="Instagram">ig</a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} aria-label="YouTube">▶</a>
+                        </div>
                     </div>
 
+                    {/* Solutions */}
                     <div className={styles.column}>
                         <h4>Solutions</h4>
                         <ul>
@@ -33,20 +42,23 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
 
+                    {/* Training */}
                     <div className={styles.column}>
                         <h4>Training</h4>
                         <ul>
                             <li><Link href="/training">Live Project Internship</Link></li>
                             <li><Link href="/training">Tech Bootcamp</Link></li>
+                            <li><Link href="/training">Web Development</Link></li>
+                            <li><Link href="/training">ERP & Automation</Link></li>
                             <li><Link href="/training-enrollment">Apply Now</Link></li>
                         </ul>
                     </div>
 
+                    {/* Contact */}
                     <div className={styles.column}>
                         <h4>Contact</h4>
                         <p className={styles.contactItem}>
-                            📍 Sri Bharathi Nagar, Theni,<br />
-                            Tamil Nadu – 625532
+                            📍 Sri Bharathi Nagar, Theni,<br />Tamil Nadu – 625532
                         </p>
                         <p className={styles.contactItem}>
                             <a href="tel:+917530008380">📞 +91 75300 08380</a>
@@ -54,14 +66,18 @@ const Footer: React.FC = () => {
                         <p className={styles.contactItem}>
                             <a href="/contact">✉️ Get in Touch</a>
                         </p>
+                        <p className={styles.contactItem}>
+                            <a href="/announcements">📢 Announcements</a>
+                        </p>
                     </div>
                 </div>
 
                 <div className={styles.bottom}>
-                    <p>&copy; {currentYear} BYNIXX Tech Solutions Pvt. Ltd. All rights reserved.</p>
+                    <p>© {currentYear} BYNIXX Tech Solutions Pvt. Ltd. All rights reserved.</p>
                     <div className={styles.legal}>
                         <Link href="/about">About Us</Link>
                         <Link href="/contact">Contact</Link>
+                        <Link href="/blog">Blog</Link>
                     </div>
                 </div>
             </div>

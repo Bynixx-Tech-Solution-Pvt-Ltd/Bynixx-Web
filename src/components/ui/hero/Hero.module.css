@@ -1,67 +1,223 @@
+/* ============================================================
+   Hero — Premium Full-Screen with Animated Background
+   ============================================================ */
+
 .hero {
     position: relative;
-    min-height: 90vh;
+    min-height: 92vh;
     display: flex;
     align-items: center;
     overflow: hidden;
     padding-top: var(--header-height);
+    background: var(--background);
 }
 
+/* Animated mesh background */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 20% 20%, rgba(26, 86, 219, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 80% 70%, rgba(8, 145, 178, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(124, 58, 237, 0.04) 0%, transparent 60%);
+    z-index: 0;
+}
+
+/* Grid pattern overlay */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(26, 86, 219, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 86, 219, 0.035) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+
+/* Primary glow orb */
 .glow {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(0, 82, 204, 0.08) 0%, transparent 70%);
-    filter: blur(100px);
-    z-index: -1;
+    top: 10%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(26, 86, 219, 0.12) 0%, rgba(8, 145, 178, 0.06) 40%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Secondary glow orb */
+.glowSecondary {
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.09) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+    animation: float 10s ease-in-out infinite reverse;
 }
 
 .content {
-    max-width: 800px;
+    max-width: 860px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 2rem 0;
+}
+
+/* Eyebrow badge */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: var(--primary-subtle);
+    border: 1px solid var(--primary-glow);
+    margin-bottom: 1.8rem;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+    animation: pulse-ring 1.5s ease-out infinite;
 }
 
 .title {
-    font-size: clamp(3rem, 8vw, 5rem);
-    line-height: 1.1;
-    margin-bottom: 2rem;
-    letter-spacing: -2px;
+    font-size: clamp(2.8rem, 7vw, 5.2rem);
+    line-height: 1.08;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    animation: fadeInUp 0.6s 0.1s ease both;
 }
 
 .subtitle {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2vw, 1.22rem);
     color: var(--text-secondary);
     margin-bottom: 3rem;
-    max-width: 600px;
+    max-width: 640px;
     margin-inline: auto;
+    line-height: 1.75;
+    animation: fadeInUp 0.6s 0.2s ease both;
 }
 
 .actions {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
     justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s 0.3s ease both;
 }
 
+/* Secondary button */
 .btnSecondary {
-    padding: 0.8rem 1.5rem;
-    border: 1px solid var(--surface-border);
-    border-radius: 8px;
+    padding: 0.85rem 2rem;
+    border: 1.5px solid var(--surface-border);
+    border-radius: 10px;
     font-weight: 600;
-    background: var(--surface);
+    font-size: 0.95rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    color: var(--text-primary);
     transition: var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .btnSecondary:hover {
-    background: var(--surface-hover);
-    border-color: var(--text-secondary);
+    background: var(--surface);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Trust indicators */
+.trustBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--surface-border);
+    animation: fadeInUp 0.6s 0.4s ease both;
+    flex-wrap: wrap;
+}
+
+.trustItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.trustItem svg {
+    width: 16px;
+    height: 16px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+/* Page hero (internal pages) — smaller */
+.heroPage {
+    min-height: 42vh;
+}
+
+.heroPage .content {
+    padding: 3rem 0 1.5rem;
+}
+
+.heroPage .title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 @media (max-width: 768px) {
     .hero {
-        min-height: 80vh;
+        min-height: 85vh;
     }
+
+    .heroPage {
+        min-height: 38vh;
+    }
+
+    .trustBar {
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
 }

@@ -1,13 +1,31 @@
+/* ============================================================
+   Home Page — Premium Styles
+   ============================================================ */
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
-/* Stats Strip */
+/* ============================================================
+   Stats Strip
+   ============================================================ */
 .statsStrip {
-    background: var(--primary);
-    padding: 2.5rem 0;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.statsStrip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
 }
 
 .statsGrid {
@@ -15,34 +33,78 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     text-align: center;
+    position: relative;
 }
 
 .statItem {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.4rem;
+    position: relative;
+}
+
+.statItem:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 1px;
+    background: rgba(255,255,255,0.2);
 }
 
 .statValue {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 800;
     color: #ffffff;
     font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.04em;
+    line-height: 1;
 }
 
 .statLabel {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
 }
 
-/* Problem Grid */
+/* ============================================================
+   Problem Grid
+   ============================================================ */
 .problemGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
+}
+
+.problemCard {
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: var(--transition-base);
+}
+
+.problemCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.problemCardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.problemCardHeader h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
 .problemList {
@@ -50,102 +112,184 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.7rem;
 }
 
 .problemList li {
     color: var(--text-secondary);
     line-height: 1.5;
-    font-size: 0.95rem;
+    font-size: 0.93rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
 }
 
-/* Industry Grid */
+/* ============================================================
+   Industry Grid
+   ============================================================ */
 .industryGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1.2rem;
 }
 
 .industryCard {
     padding: 2rem 1.5rem;
-    border-radius: 20px;
+    border-radius: var(--border-radius-md);
     text-align: center;
     transition: var(--transition-base);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
 }
 
 .industryCard:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(26, 86, 219, 0.2);
 }
 
 .industryIcon {
     font-size: 2.5rem;
     display: block;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.industryCard:hover .industryIcon {
+    transform: scale(1.15);
 }
 
 .industryName {
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.9rem;
     color: var(--text-primary);
+    line-height: 1.3;
 }
 
-/* Testimonials */
+/* ============================================================
+   Testimonials
+   ============================================================ */
 .testimonialsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
 }
 
 .testimonialCard {
     padding: 2.5rem;
-    border-radius: 24px;
+    border-radius: var(--border-radius-lg);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    background: var(--background);
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonialCard::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--primary);
+    opacity: 0.05;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.testimonialCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
 .quote {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.85;
     font-style: italic;
+    position: relative;
+    flex: 1;
 }
 
 .testimonialAuthor {
     display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--surface-border);
+}
+
+.authorAvatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
 }
 
 .testimonialAuthor strong {
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: block;
 }
 
 .testimonialAuthor span {
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
 }
 
-/* CTA Box */
+/* ============================================================
+   CTA Box
+   ============================================================ */
 .ctaBox {
-    padding: 4rem;
-    border-radius: 30px;
+    padding: 4rem 5rem;
+    border-radius: var(--border-radius-xl);
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.ctaBox::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26, 86, 219, 0.03) 0%, rgba(8, 145, 178, 0.03) 100%);
+    pointer-events: none;
 }
 
 .ctaBox h3 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.04em;
+    position: relative;
 }
 
 .ctaBox p {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
-    line-height: 1.7;
+    line-height: 1.75;
+    max-width: 600px;
+    margin-inline: auto;
+    position: relative;
 }
 
 .ctaActions {
@@ -153,106 +297,39 @@
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .btnOutline {
-    padding: 0.8rem 1.8rem;
-    border-radius: 8px;
-    border: 2px solid var(--primary);
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    border: 1.5px solid var(--primary);
     color: var(--primary);
     font-weight: 600;
+    font-size: 0.95rem;
     transition: var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .btnOutline:hover {
     background: var(--primary);
     color: #ffffff;
-}
-
-/* Process Steps */
-.processGrid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 860px;
-    margin: 0 auto;
-}
-
-.processStep {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 1.8rem 2rem;
-    border-radius: 16px;
-    background: var(--surface);
-    border: 1px solid var(--surface-border);
-    transition: var(--transition-base);
-}
-
-.processStep:hover {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px var(--primary-glow);
-}
-
-.stepNumber {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--primary);
-    font-family: 'Outfit', sans-serif;
-    flex-shrink: 0;
-    min-width: 3rem;
-    line-height: 1;
-    margin-top: 0.1rem;
-}
-
-.stepTitle {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-.stepDesc {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-/* Industry Detail Grid (Solutions Page) */
-.industryDetailGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Topics Grid (Training Page) */
-.topicsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.2rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.topicChip {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1.2rem 1.5rem;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: var(--transition-base);
-}
-
-.topicChip:hover {
     transform: translateY(-2px);
+    box-shadow: var(--shadow-primary-sm);
 }
 
-/* Responsive */
+/* ============================================================
+   Responsive
+   ============================================================ */
 @media (max-width: 900px) {
     .statsGrid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statItem:nth-child(2)::after {
+        display: none;
     }
 }
 
@@ -261,27 +338,22 @@
         padding: 2.5rem 1.5rem;
     }
 
-    .ctaBox h3 {
-        font-size: 1.8rem;
-    }
-
     .statsGrid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 
     .statValue {
-        font-size: 2rem;
-    }
-
-    .processStep {
-        flex-direction: column;
-        gap: 0.8rem;
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 480px) {
     .statsGrid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statItem::after {
+        display: none;
     }
 }

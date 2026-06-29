@@ -80,26 +80,30 @@ export default function Home() {
         "BYNIXX helped us move from manual billing to a complete ERP system. Our operations are now faster and more accurate.",
       author: "Business Owner",
       role: "Manufacturing SME, Theni",
+      emoji: "🏭",
     },
     {
       quote:
         "The internship gave real industry experience, not just theory. I worked on live client projects from day one.",
       author: "Intern Graduate",
       role: "Software Developer",
+      emoji: "👨‍💻",
     },
   ];
 
   return (
     <>
       <Hero
-        title="Building Intelligent Digital Systems for Real-World Businesses"
+        title={`Building <span class="text-gradient">Intelligent</span> Digital Systems for Real Businesses`}
         subtitle="BYNIXX Tech Solutions empowers small and medium industries with enterprise-grade ERP systems, automation tools, and modern websites — while building industry-ready talent through live project execution."
         primaryAction={{ label: "Get Free Digital Audit", href: "/contact" }}
-        secondaryAction={{ label: "Start Your Project", href: "/solutions" }}
+        secondaryAction={{ label: "Explore Solutions", href: "/solutions" }}
+        eyebrow="Theni's Leading Tech Company"
+        trustItems={["50+ Projects Delivered", "100+ Students Trained", "Local Expert Support"]}
       />
 
       {/* Stats Strip */}
-      <section className={styles.statsStrip}>
+      <section className={styles.statsStrip} id="stats">
         <div className="container">
           <div className={styles.statsGrid}>
             {stats.map((stat, i) => (
@@ -112,9 +116,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services */}
       <Section
         title="Our Digital Solutions"
         subtitle="Enterprise-grade technology, tailored for small and medium businesses in Theni and beyond."
+        id="solutions"
       >
         <div className={styles.grid}>
           {services.map((service, index) => (
@@ -128,12 +134,14 @@ export default function Home() {
         title="The Problems We Solve"
         subtitle="Real challenges faced by businesses and students — solved by BYNIXX."
         dark
+        id="problems"
       >
         <div className={styles.problemGrid}>
-          <div className="glass" style={{ padding: "2.5rem", borderRadius: "20px" }}>
-            <h3 style={{ marginBottom: "1.5rem", fontSize: "1.4rem" }}>
-              🏭 For Businesses
-            </h3>
+          <div className={styles.problemCard}>
+            <div className={styles.problemCardHeader}>
+              <span style={{ fontSize: '1.8rem' }}>🏭</span>
+              <h3>For Businesses</h3>
+            </div>
             <ul className={styles.problemList}>
               <li>❌ Manual, error-prone operations</li>
               <li>❌ Lack of process automation</li>
@@ -141,10 +149,11 @@ export default function Home() {
               <li>❌ Dependence on unreliable freelancers</li>
             </ul>
           </div>
-          <div className="glass" style={{ padding: "2.5rem", borderRadius: "20px" }}>
-            <h3 style={{ marginBottom: "1.5rem", fontSize: "1.4rem" }}>
-              🎓 For Students
-            </h3>
+          <div className={styles.problemCard}>
+            <div className={styles.problemCardHeader}>
+              <span style={{ fontSize: '1.8rem' }}>🎓</span>
+              <h3>For Students</h3>
+            </div>
             <ul className={styles.problemList}>
               <li>❌ Purely theoretical education</li>
               <li>❌ No real project exposure</li>
@@ -152,10 +161,11 @@ export default function Home() {
               <li>❌ Skill gap with industry expectations</li>
             </ul>
           </div>
-          <div className="glass" style={{ padding: "2.5rem", borderRadius: "20px" }}>
-            <h3 style={{ marginBottom: "1.5rem", fontSize: "1.4rem" }}>
-              ✅ The BYNIXX Solution
-            </h3>
+          <div className={styles.problemCard}>
+            <div className={styles.problemCardHeader}>
+              <span style={{ fontSize: '1.8rem' }}>✅</span>
+              <h3>The BYNIXX Solution</h3>
+            </div>
             <ul className={styles.problemList}>
               <li>✅ Affordable, scalable ERP systems</li>
               <li>✅ Structured development process</li>
@@ -166,9 +176,11 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Training */}
       <Section
         title="Training & Internship Programs"
         subtitle="Learn through live client projects. Not simulations — real work that matters."
+        id="training"
       >
         <div className={styles.grid}>
           {courses.map((course, index) => (
@@ -182,10 +194,11 @@ export default function Home() {
         title="Industries We Serve"
         subtitle="Deep domain knowledge across key sectors in Tamil Nadu's economy."
         dark
+        id="industries"
       >
         <div className={styles.industryGrid}>
           {industries.map((ind, i) => (
-            <div key={i} className={`glass ${styles.industryCard}`}>
+            <div key={i} className={styles.industryCard}>
               <span className={styles.industryIcon}>{ind.icon}</span>
               <p className={styles.industryName}>{ind.name}</p>
             </div>
@@ -197,14 +210,18 @@ export default function Home() {
       <Section
         title="What Our Clients & Trainees Say"
         subtitle="Real impact. Real results. From Theni to the industry."
+        id="testimonials"
       >
         <div className={styles.testimonialsGrid}>
           {testimonials.map((t, i) => (
-            <div key={i} className={`glass ${styles.testimonialCard}`}>
+            <div key={i} className={styles.testimonialCard}>
               <p className={styles.quote}>&ldquo;{t.quote}&rdquo;</p>
               <div className={styles.testimonialAuthor}>
-                <strong>{t.author}</strong>
-                <span>{t.role}</span>
+                <div className={styles.authorAvatar}>{t.emoji}</div>
+                <div>
+                  <strong>{t.author}</strong>
+                  <span>{t.role}</span>
+                </div>
               </div>
             </div>
           ))}
@@ -215,17 +232,23 @@ export default function Home() {
       <Section
         title="Ready to Transform Your Business?"
         subtitle="Whether you need a custom solution or want to launch your tech career, we're right here in Theni."
+        dark
+        id="cta"
       >
-        <div className={styles.ctaBox + " glass"}>
+        <div className={styles.ctaBox}>
           <h3>Start with a Free Digital Audit</h3>
           <p>
-            Join growing businesses and ambitious students who have already partnered with BYNIXX Tech Solutions to build, automate, and thrive.
+            Join growing businesses and ambitious students who have already partnered with BYNIXX Tech Solutions
+            to build, automate, and thrive.
           </p>
           <div className={styles.ctaActions}>
-            <a href="/contact" className="btn-primary">
+            <a href="/contact" className="btn-primary" id="cta-contact">
               Get Free Consultation
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
             </a>
-            <a href="/training" className={styles.btnOutline}>
+            <a href="/training" className={styles.btnOutline} id="cta-training">
               Explore Training
             </a>
           </div>
